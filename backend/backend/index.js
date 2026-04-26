@@ -229,6 +229,8 @@ app.post("/signup", async (req, res) => {
     res.cookie("token", token, {
       httpOnly: false,
       path: "/",
+      sameSite: "none",
+      secure: true,
     });
     res.status(201).json({ 
       message: "User signed in successfully", 
@@ -259,6 +261,8 @@ app.post("/login", async (req, res) => {
     res.cookie("token", token, {
       httpOnly: false,
       path: "/",
+      sameSite: "none",
+      secure: true,
     });
     res.status(201).json({ 
       message: "User logged in successfully", 
